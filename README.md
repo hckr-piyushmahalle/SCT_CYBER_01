@@ -1,46 +1,58 @@
 # Task 01 - Caesar Cipher Tool 🔐
 
-This project is part of the SkillCraft Technology Cyber Security Internship.
-
-It is a basic implementation of the Caesar Cipher encryption and decryption tool using Python. The Caesar Cipher is a substitution cipher where each letter in the plaintext is shifted by a fixed number of positions in the alphabet.
+This is an enhanced implementation of the classic **Caesar Cipher** as part of my internship at **SkillCraft Technology**. The tool allows users to encrypt and decrypt messages with additional useful features.
 
 
-💻 How to Run
-1. Make sure Python is installed on your system.
-2. Open the terminal or command prompt in the project folder.
-3. Run the script using the following command:
+## 💡 What's New in This Version
+
+✅ Preserves uppercase & lowercase letters  
+✅ Ignores non-alphabet characters (e.g., numbers, symbols, spaces)  
+✅ Brute-force decryption mode (shows all 25 possible shifts)  
+✅ Menu-driven UI for easy navigation
+
+
+## 💻 How to Run
+
+1. Make sure Python is installed
+2. Open terminal in the project folder
+3. Run the following command:
 
 ```bash
 python caesar_cipher.py
 
 
-✍️ What It Does
-Prompts the user to choose between encryption or decryption
 
-- Takes a message and a shift value as input
+📋 Features
+Encrypt Message: Shifts letters by a given number while keeping other characters intact
 
-- Applies Caesar Cipher logic to transform the message
+Decrypt Message: Reverses the shift to reveal the original text
 
-- Displays the encrypted or decrypted result
+Brute-force Decrypt: Displays all possible results to help decode unknown messages
+
+Interactive Menu: Clean user interface in the terminal
 
 
-📌 Example
+
+🧪 Example
 === Caesar Cipher Tool ===
-Type 'e' to encrypt or 'd' to decrypt: e
-Enter your message: hello
-Enter shift value (e.g., 3): 3
-Encrypted message: khoor
+1. Encrypt a message
+2. Decrypt a message
+3. Brute-force decrypt
+4. Exit
+
+Enter your choice (1-4): 1
+Enter your message: Hello, World!
+Enter shift value (0-25): 3
+
+🔐 Encrypted message: Khoor, Zruog!
 
 
-✅ Technologies Used
-Python 3.x
-
-Command-line interface
 
 📁 Files Included
-caesar_cipher.py → Main Python script
+caesar_cipher.py → Python script with full Caesar Cipher logic
 
-README.md → Project documentation
+README.md → Documentation for the project
 
-Created for the SkillCraft Technology Cyber Security Internship
-#SkillCraftTechnology #Python #CaesarCipher #CyberSecurity
+
+Created as part of the Cyber Security Internship at SkillCraft Technology.
+#SkillCraftTechnology #Python #CaesarCipher #Encryption #Internship #CyberSecurity
