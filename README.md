@@ -5,8 +5,7 @@ This project is part of the SkillCraft Technology Cyber Security Internship.
 It is a basic implementation of the Caesar Cipher encryption and decryption tool using Python. The Caesar Cipher is a substitution cipher where each letter in the plaintext is shifted by a fixed number of positions in the alphabet.
 
 
-## 💻 How to Run
-
+💻 How to Run
 1. Make sure Python is installed on your system.
 2. Open the terminal or command prompt in the project folder.
 3. Run the script using the following command:

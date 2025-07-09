@@ -1,27 +1,62 @@
-def encrypt(text, shift):
+def caesar_encrypt(text, shift):
     result = ""
     for char in text:
         if char.isalpha():
             base = ord('A') if char.isupper() else ord('a')
-            result += chr((ord(char) - base + shift) % 26 + base)
+            shifted = (ord(char) - base + shift) % 26
+            result += chr(base + shifted)
         else:
             result += char
     return result
 
-def decrypt(text, shift):
-    return encrypt(text, -shift)
+def caesar_decrypt(text, shift):
+    return caesar_encrypt(text, -shift)
 
-# Main Program
-print("=== Caesar Cipher Tool ===")
-choice = input("Type 'e' to encrypt or 'd' to decrypt: ").lower()
-message = input("Enter your message: ")
-shift = int(input("Enter shift value (e.g., 3): "))
+def brute_force_decrypt(text):
+    print("\n🔍 Brute Force Results:")
+    for shift in range(1, 26):
+        decrypted = caesar_decrypt(text, shift)
+        print(f"Shift {shift:2}: {decrypted}")
 
-if choice == 'e':
-    encrypted = encrypt(message, shift)
-    print("Encrypted message:", encrypted)
-elif choice == 'd':
-    decrypted = decrypt(message, shift)
-    print("Decrypted message:", decrypted)
-else:
-    print("Invalid choice.")
+def menu():
+    while True:
+        print("\n=== Caesar Cipher Tool ===")
+        print("1. Encrypt a message")
+        print("2. Decrypt a message")
+        print("3. Brute-force decrypt")
+        print("4. Exit")
+
+        choice = input("Enter your choice (1-4): ").strip()
+
+        if choice == '1':
+            msg = input("Enter your message: ")
+            shift = get_shift()
+            encrypted = caesar_encrypt(msg, shift)
+            print(f"\n🔐 Encrypted message: {encrypted}")
+
+        elif choice == '2':
+            msg = input("Enter your message: ")
+            shift = get_shift()
+            decrypted = caesar_decrypt(msg, shift)
+            print(f"\n🔓 Decrypted message: {decrypted}")
+
+        elif choice == '3':
+            msg = input("Enter the encrypted message: ")
+            brute_force_decrypt(msg)
+
+        elif choice == '4':
+            print("Goodbye! 👋")
+            break
+
+        else:
+            print("⚠️ Invalid choice. Please try again.")
+
+def get_shift():
+    while True:
+        try:
+            return int(input("Enter shift value (0-25): "))
+        except ValueError:
+            print("⚠️ Please enter a valid number.")
+
+if __name__ == "__main__":
+    menu()
